@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.devMode" value="false" />
+	<package name="user"  extends="struts-default">
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="input">/error.jsp</result>
+		</global-results>
+		<action name="addFriend" class="addFriendAction">
+			<result name="success">/friendRequest.jsp</result>
+			<result name="input">/test.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="deleteRequestByAnsweror" class="answerorRequestAction" method="deleteRequestByAnsweror">
+			<result name="success">/friendRequest.jsp</result>
+			<result name="request not exists">/error.jsp</result>
+			<result name="delete error">/error.jsp</result>
+			<result name="default">/error.jsp</result>
+		</action>
+		<!-- <result-types>
+        	<result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+    	</result-types>
+    	<interceptors>
+        	<interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+    	</interceptors> -->
+	
+		<!--  -->
+		<!-- 
+		<action name="login" class="loginAction">
+			<result name="success" type="redirectAction">listJournal</result>
+			<result name="input">/wellcome.jsp</result>
+		</action>		
+				
+		<action name="enroll" class="enrollAction">
+			<result name="success" type="redirectAction">listJournal</result>
+			<result name="input">/wellcome.jsp</result>
+		</action>
+		-->
+		<!-- 
+		<action name="login" class="Login">
+			<result name="success">/Article_List.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		 -->		
+		<action name="login" class="loginAction">
+			<!-- <result name="success">/index.jsp</result> -->
+			<result name="success">/index.jsp</result>
+			<result name="input">/error.jsp</result>
+			<result name="login">/test.jsp</result>
+		</action>
+		<action name="enroll" class="enrollAction">
+			<result name="success">/index.jsp</result>
+			<result name="input">/wellcome.jsp</result>
+		</action>
+		<action name="logout" class="logoutAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="userManage" class="userManageAction">
+			<result name="success">/user.jsp</result>
+		</action>
+		<action name="modifyUserInfo" class="modifyUserInfoAction">
+			<result name="success" type="chain">userManage</result>
+			<result name="input" type="chain">userManage</result>
+		</action>			 
+		<action name="enrollAction" class="EnrollAction">
+			<result name="success">/index.jsp</result>
+			<result name="input">/enroll.jsp</result>
+		</action>
+		<action name="repin" class="repinAction">
+			<result name="success">/index.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		<action name="addBoard" class="addBoardAction">
+			<result name="success">/userAdminPage.jsp</result>
+			<result name="user not exists">/test.jsp</result>
+			<result name="board name exists">/error.jsp</result>
+		</action>
+		<action name="editBoard" class="editBoardAction">
+			<result name="success">/index.jsp</result>
+			<result name="update error">/test.jsp</result>
+			<result name="board name exists">/error.jsp</result>
+			<result name="default">/error.jsp</result>
+		</action>
+		<action name="queryBoardByBid" class="queryBoardAction" method="queryBoardByBid">
+			<result name="success" type="redirect">
+				<param name="location">boardDetail.jsp</param>	
+				<param name="bname">${bname}</param>
+				<param name="bid">${bid}</param>
+				<param name="username">${username}</param>
+				<param name="info">${info}</param>					
+				<param name="pinCount">${pinCount}</param>
+				<param name="followerCount">${followerCount}</param>
+				<!-- <param name="includeProperties">
+					board\.bid,
+					board\.bname,
+					board\.user\.username,
+					board\.info,
+					board\.time,
+					boardStat\.pinCount,
+					boardStat\.followerCount
+				</param> 
+ -->			</result>
+		</action>
+		<action name="deleteBoard" class="deleteBoardAction">
+			<result name="success">/wellcome.jsp</result>
+			<result name="delete error">/test.jsp</result>
+			<result name="board not exists">/error.jsp</result>
+			<result name="default">/error.jsp</result>
+		</action>
+		
+		<action name="addPin" class="addPinAction">
+			<result name="success">/wellcome.jsp</result>
+			<result name="input">/test.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		
+		<action name="deleteFollow" class="deleteFollowAction">
+			<result name="success">/wellcome.jsp</result>
+			<result name="follow not exists">/test.jsp</result>
+			<result name="delete follow error">/error.jsp</result>
+			<result name="default">/error.jsp</result>
+		</action>
+		
+		<!-- <action name="addComment" class="addCommentAction">
+			<result name="success">/wellcome.jsp</result>
+			<result name="input">/test.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action> -->
+		
+		<action name="deleteComment" class="deleteCommentAction">
+			<result name="success">/wellcome.jsp</result>
+			<result name="comment not exists">/test.jsp</result>
+			<result name="delete comment error">/error.jsp</result>
+			<result name="default">/error.jsp</result>
+		</action>
+		
+		<!-- <action name="addLikes" class="addLikesAction">
+			<result name="success">/wellcome.jsp</result>
+			<result name="input">/test.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		 -->
+		
+		
+		<!-- <action name="deleteLikes" class="deleteLikesAction">
+			<result name="success">/wellcome.jsp</result>
+			<result name="likes not exists">/test.jsp</result>
+			<result name="delete likes error">/error.jsp</result>
+			<result name="default">/error.jsp</result>
+		</action> -->		
+		<action name="deleteFriend" class="deleteFriendAction">
+			<result name="success">/wellcome.jsp</result>
+			<result name="friend not exists">/test.jsp</result>
+			<result name="delete friend error">/error.jsp</result>
+			<result name="default">/error.jsp</result>
+		</action>
+		<action name="editPin" class="editPinAction">
+			<!-- <result name="success" type="redirect">
+				<param name="location">/boardDetail.jsp?bid=${bid}</param>			
+			</result> -->
+			<result name="success" type="redirectAction">
+				<!-- queryBoardByBid.action?bid=${bid} -->
+				<param name="actionName">queryBoardByBid</param>	
+				<param name="bid">${bid}</param>		
+			</result>
+			<!-- <result name="cannot change board">/error.jsp</result>
+			<result name="pin not exists">/error.jsp</result>
+			<result name="update error">/error.jsp</result>
+			<result name="default">/error.jsp</result> -->
+		</action>
+		
+		<action name="deletePin" class="deletePinAction">
+			<result name="success">/wellcome.jsp</result>
+			<result name="delete picture error">/test.jsp</result>
+			<result name="pin not exists">/test.jsp</result>
+			<result name="delete pin error">/error.jsp</result>
+			<result name="default">/error.jsp</result>
+		</action>
+		<action name="updateFollow" class="queryAction" method="updateFollow">
+			<result name="success">/wellcome.jsp</result>
+			<result name="follow not exists">/test.jsp</result>
+			<result name="update follow error">/error.jsp</result>
+			<result name="default">/error.jsp</result>
+		</action>
+		<action name="changeFollowStream" class="queryAction" method="changeFollowStream">
+			<result name="success">/wellcome.jsp</result>
+			<result name="change stream error">/error.jsp</result>
+			<result name="default">/error.jsp</result>
+		</action>
+	</package>	
+	<package name="userAjaxMapping" extends="json-default">
+		<action name="queryBoardsByUsername" class="queryBoardAction" method="queryBoardsByUsername">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					boardList\[\d+\]\.bid,
+					boardList\[\d+\]\.bname,
+					boardList\[\d+\]\.user\.username,
+					boardList\[\d+\]\.info,
+					boardList\[\d+\]\.time					
+				</param>
+			</result>
+		</action>
+		<action name="queryBoardsByStream" class="queryBoardAction" method="queryBoardsByStream">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					boardList\[\d+\]\.bid,
+					boardList\[\d+\]\.bname,
+					boardList\[\d+\]\.user\.username,
+					boardList\[\d+\]\.info,
+					boardList\[\d+\]\.time
+				</param>
+			</result>
+		</action>
+		<action name="queryBoardsByKeyword" class="queryBoardAction" method="queryBoardsByKeyword">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					boardList\[\d+\]\.bid,
+					boardList\[\d+\]\.bname,
+					boardList\[\d+\]\.user\.username,
+					boardList\[\d+\]\.info,
+					boardList\[\d+\]\.time
+				</param>
+			</result>
+		</action>
+		<action name="queryBoardsByPicnum" class="queryBoardAction" method="queryBoardsByPicnum">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					boardList\[\d+\]\.bid,
+					boardList\[\d+\]\.bname,
+					boardList\[\d+\]\.user\.username,
+					boardList\[\d+\]\.info,
+					boardList\[\d+\]\.time
+				</param>
+			</result>
+		</action>
+		<action name="queryPinSummaryByPinid" class="queryPinAction" method="queryPinSummaryByPinid">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					pin\.pinid,
+					pin\.board\.bname,
+					pin\.picture\.picnum,
+					pin\.picture\.url,
+					pin\.picture\.sourceUrl,
+					pin\.note,
+					pin\.time,
+					pin\.repin,
+					pin\.board\.user\.username,
+					pinStat\.repinCount,
+					pinStat\.likeCount,
+					pinStat\.commentCount,
+					pinStat\.isLikedByCurUser
+				</param>
+			</result>
+			<result name="input" type="json">/error.jsp</result>
+		</action>
+		<action name="queryPinsByBid" class="queryPinAction" method="queryPinsByBid">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					pinList\[\d+\]\.pinid,
+					pinList\[\d+\]\.board\.bname,
+					pinList\[\d+\]\.board\.bid,
+					pinList\[\d+\]\.board\.info,
+					pinList\[\d+\]\.picture\.url,
+					pinList\[\d+\]\.picture\.sourceUrl,
+					pinList\[\d+\]\.board\.user\.username,
+					pinList\[\d+\]\.note,
+					pinList\[\d+\]\.time,
+					pinList\[\d+\]\.repin,					
+					pinStatList\[\d+\]\.repinCount,
+					pinStatList\[\d+\]\.likeCount,
+					pinStatList\[\d+\]\.pinid,
+					pinStatList\[\d+\]\.isLikedByCurUser					
+				</param>
+			</result>
+		</action>
+		<action name="queryLatestPinSummaries" class="queryPinAction" method="queryLatestPinSummaries">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					pinList\[\d+\]\.pinid,
+					pinList\[\d+\]\.board\.bname,
+					pinList\[\d+\]\.board\.bid,
+					pinList\[\d+\]\.board\.info,
+					pinList\[\d+\]\.picture\.url,
+					pinList\[\d+\]\.picture\.sourceUrl,
+					pinList\[\d+\]\.picture\.picnum,
+					pinList\[\d+\]\.board\.user\.username,
+					pinList\[\d+\]\.note,
+					pinList\[\d+\]\.time,
+					pinList\[\d+\]\.repin,					
+					pinStatList\[\d+\]\.repinCount,
+					pinStatList\[\d+\]\.likeCount,
+					pinStatList\[\d+\]\.pinid,
+					pinStatList\[\d+\]\.isLikedByCurUser,
+					lastPinid
+				</param>
+			</result>
+		</action>
+		<action name="queryPinByTag" class="queryPinAction" method="queryPinByTag">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">textml</param> -->  
+                <param name="includeProperties">
+					pinList\[\d+\]\.pinid,
+					pinList\[\d+\]\.board\.bname,
+					pinList\[\d+\]\.board\.bid,
+					pinList\[\d+\]\.board\.info,
+					pinList\[\d+\]\.picture\.url,
+					pinList\[\d+\]\.picture\.sourceUrl,
+					pinList\[\d+\]\.picture\.picnum,
+					pinList\[\d+\]\.board\.user\.username,
+					pinList\[\d+\]\.note,
+					pinList\[\d+\]\.time,
+					pinList\[\d+\]\.repin,
+					pinStatList\[\d+\]\.repinCount,
+					pinStatList\[\d+\]\.likeCount,
+					pinStatList\[\d+\]\.pinid,
+					pinStatList\[\d+\]\.islikedByCurUser,
+					lastPinid
+				</param>
+            </result>  
+        </action>
+        <action name="sortPinBylikesRepin" class="queryPinAction" method="sortPinBylikesRepin">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">textml</param> -->  
+                <param name="includeProperties">
+					pinList\[\d+\]\.pinid,
+					pinList\[\d+\]\.board\.bname,
+					pinList\[\d+\]\.board\.bid,
+					pinList\[\d+\]\.board\.info,
+					pinList\[\d+\]\.picture\.url,
+					pinList\[\d+\]\.picture\.sourceUrl,
+					pinList\[\d+\]\.picture\.picnum,
+					pinList\[\d+\]\.board\.user\.username,
+					pinList\[\d+\]\.note,
+					pinList\[\d+\]\.time,
+					pinList\[\d+\]\.repin,
+					pinStatList\[\d+\]\.repinCount,
+					pinStatList\[\d+\]\.likeCount,
+					pinStatList\[\d+\]\.pinid,
+					pinStatList\[\d+\]\.islikedByCurUser,
+					lastPinid
+				</param>
+            </result>  
+        </action>
+		<action name="takePinByBidOrder" class="takePinByBidOrderAction">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">textml</param> -->  
+                <param name="includeProperties">
+					pinlist\[\d+\]\.pinid,
+					pinlist\[\d+\]\.board\.bname,
+					pinlist\[\d+\]\.board\.bid,
+					pinlist\[\d+\]\.board\.info,
+					pinlist\[\d+\]\.picture\.url,
+					pinlist\[\d+\]\.picture\.sourceUrl,
+					pinlist\[\d+\]\.picture\.picnum,
+					pinlist\[\d+\]\.board\.user\.username,
+					pinlist\[\d+\]\.note,
+					pinlist\[\d+\]\.time,
+					pinlist\[\d+\]\.repin,
+					pinStatList\[\d+\]\.repinCount,
+					pinStatList\[\d+\]\.likeCount,
+					pinStatList\[\d+\]\.pinid,
+					pinStatList\[\d+\]\.islikedByCurUser,
+					lastPinid
+				</param>
+            </result>  
+        </action>
+		<action name="queryPictureByUsername" class="queryPictureAction" method="queryPictureByUsername">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					picList\[\d+\]\.picnum,
+					picList\[\d+\]\.url,
+					picList\[\d+\]\.sourceUrl
+				</param>
+			</result>
+		</action>
+		<action name="queryPictureByBid" class="queryPictureAction" method="queryPictureByBid">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					picList\[\d+\]\.picnum,
+					picList\[\d+\]\.url,
+					picList\[\d+\]\.sourceUrl
+				</param>
+			</result>
+		</action>
+		<action name="addComment" class="addCommentAction">
+			<result name="success" type="json">
+				<param name="includeProperties">					
+					idcomment,
+					pinid,
+					content
+				</param>
+			</result>
+		</action>
+		<action name="queryCommentByPinid" class="queryCommentByPinidAction">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">textml</param> -->  
+                <param name="includeProperties">
+					commentlist\[\d+\]\.cid,
+					commentlist\[\d+\]\.time,
+					commentlist\[\d+\]\.user\.username,
+					commentlist\[\d+\]\.content,
+				</param>
+            </result>  
+        </action>
+		<!-- <action name="fileUploadAction" class="com.home.FileAction" method="fileUpload">  
+            <result type="json" name="success">  
+                <param name="contentType">text/html</param>  
+            </result>  
+        </action> -->
+        <action name="fileUploadAction" class="fileAction" method="fileUpload">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					filePath,
+					picnum
+				</param>
+            </result>  
+        </action>
+        <action name="queryUserStatistic" class="queryStatAction" method="queryUserStatistic">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					userStat\.boardCount,
+					userStat\.pinCount,
+					userStat\.likeCount,
+					userStat\.friendCount,
+					userStat\.followingCount
+				</param>
+            </result>  
+        </action>
+        <action name="queryBoardStatistic" class="queryBoardAction" method="queryBoardStatistic">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					boardStat\.bid,
+					boardStat\.pinCount,
+					boardStat\.followerCount
+				</param>
+            </result>  
+        </action>
+        <action name="addLikes" class="addLikesAction">
+			<result type="json" name="success">
+				<param name="includeProperties">idlikes</param>
+			</result>
+		</action>
+		<action name="deleteLikes" class="deleteLikesAction">
+			<result name="success" type="json">
+				<param name="includeProperties">er</param>
+			</result>
+			<!-- <result name="likes not exists">/test.jsp</result>
+			<result name="delete likes error">/error.jsp</result>
+			<result name="default">/error.jsp</result> -->
+		</action>
+		<action name="queryPictureByLikes" class="queryAction" method="queryPictureByLikes">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					picturelist\[\d+\]\.picnum,
+					picturelist\[\d+\]\.url,
+					picturelist\[\d+\]\.sourceUrl,
+				</param>
+            </result>  
+        </action>
+        <action name="queryUserByLikes" class="queryAction" method="queryUserByLikes">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					userlist\[\d+\]\.username,
+				</param>
+            </result>  
+        </action>
+        <action name="queryBoardByFollow" class="queryAction" method="queryBoardByFollow">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					boardlist\[\d+\]\.bid,
+					boardlist\[\d+\]\.bname,
+					boardlist\[\d+\]\.info,
+				</param>
+            </result>  
+        </action>
+        <action name="queryUserByFollow" class="queryAction" method="queryUserByFollow">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					userlist\[\d+\]\.username,
+				</param>
+            </result>  
+        </action>
+        <action name="queryStreamByUsername" class="queryAction" method="queryStreamByUsername">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					streamlist\[\d+\]\.stream,
+				</param>
+            </result>  
+        </action>
+        <action name="queryBoardByStream" class="queryAction" method="queryBoardByStream">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					boardlist\[\d+\]\.bid,
+					boardlist\[\d+\]\.bname,
+					boardlist\[\d+\]\.info,
+					boardCount
+				</param>
+            </result>  
+        </action>
+        <action name="queryFollowByUsernameBid" class="queryAction" method="queryFollowByUsernameBid">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					follow\.idfollow,
+					follow\.stream,
+				</param>
+            </result>  
+        </action>
+        <action name="queryUserByKeyword" class="friendQueryAction" method="queryUserByKeyword">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					userlist\[\d+\]\.username,
+				</param>
+            </result>  
+        </action>
+        <action name="queryFriendByUsername" class="friendQueryAction" method="queryFriendByUsername">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					friendlist\[\d+\]\.username,
+				</param>
+            </result>  
+        </action>
+        <action name="countFriendAndRequestByUsername" class="friendQueryAction" method="countFriendAndRequestByUsername">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					friendstat\.friendcount,
+					friendstat\.requestcount,
+				</param>
+            </result>  
+        </action>
+        <action name="queryFriendExist" class="friendQueryAction" method="queryFriendExist">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					friendExist
+				</param>
+            </result>  
+        </action>
+        <action name="queryRequestByAnsweror" class="answerorRequestAction" method="findRequestByAnsweror">  
+            <result type="json" name="success">  
+                <!-- <param name="contentType">text/html</param> -->  
+                <param name="includeProperties">
+					requests\[\d+\]\.invitor\.username,
+				</param>
+            </result>  
+        </action>
+        <!-- <action name="addFriend" class="addFriendAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					idfriend
+				</param>
+			</result>
+			<result name="input" type="json">
+				<param name="includeProperties">
+					error
+				</param>
+			</result>
+		</action> -->
+		<action name="addRequest" class="addFriendAction" method="inviteFriendRequest">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					idfriend
+				</param>
+			</result>			
+		</action>
+		<action name="queryBoardByBidJson" class="queryBoardAction" method="queryBoardByBid">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					board\.bid,
+					board\.bname,
+					board\.user\.username,
+					board\.info,
+					board\.time,
+					boardStat\.pinCount,
+					boardStat\.followerCount
+				</param> 
+			</result>
+		</action>
+		<action name="addFollow" class="addFollowAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					idfollow
+				</param> 
+			</result>
+			<result name="input" type="json">
+				<param name="includeProperties">
+					idfollow
+				</param> 
+			</result>
+			<!-- <result name="input">/test.jsp</result>
+			<result name="error">/error.jsp</result> -->
+		</action>
+		<!-- <action name="repin" class="repinAction" >
+			<result name="success" type="json">
+				<param name="includeProperties">
+					newPinid
+				</param> 
+			</result>
+		</action> -->
+	</package>
+</struts>    

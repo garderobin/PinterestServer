@@ -1,0 +1,504 @@
+@CHARSET "US-ASCII";
+
+.centeredWithinWrapper {
+    /* width: 1250px; */
+    width:auto;
+    float:none;
+    margin: 0 auto;
+}
+
+#addPinMenuContent {
+	 display:none; 
+	 padding-left:70%; 
+	 padding-bottom:20%; 
+}
+
+#masonryContainer {
+  /* background: #EEE; */
+  /* margin: 0 auto; */
+}
+
+#masonryContainer .masonryItem {
+  /* width:  60px;
+  height: 60px;*/
+  /* float: left; 
+  margin-bottom: 10px; */
+  /* background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px; */
+  margin-bottom: 10px;
+  padding: 5px;
+  /* background: #D8D5D2; */
+  font-size: 11px;
+  line-height: 1.4em;
+  /* float: left; */
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+#masonrySmall {
+   /* background: #EEE; */ 
+  margin: 0 auto;
+}
+
+#masonrySmall .masonrySmallItem {
+   margin-bottom: 2px; 
+  /*  padding: 5px;  */
+
+  /* float: left; */
+}
+
+#masonryBoard {
+	margin: 0 auto;
+}
+
+#masonryBoard .masonryItem {
+  /* width:  60px;
+  height: 60px;*/
+  /* float: left; 
+  margin-bottom: 10px; */
+  /* background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px; */
+  margin-bottom: 10px;
+  padding: 5px;
+  /* background: #D8D5D2; */
+  font-size: 11px;
+  line-height: 1.4em;
+  /* float: left; */
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.Button.btn1 {
+    background-color: #f7f7f7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f0f0f0));
+    background: -webkit-linear-gradient(#fff, #f0f0f0);
+    background: linear-gradient(#fff, #f0f0f0);
+    border: 1px solid #ccc;
+    color: #5f5f5f;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 1px #fff;
+    white-space: nowrap;
+    background-color: #f0f0f0;
+    padding: 7px 13px;
+}
+
+.Button.btn1.rounded {
+    border-radius: 3px;
+}
+
+.Button.btn1:hover, .Button.btn1:focus {
+    border-color: #ccc #c2c2c2 #b8b8b8;
+}
+
+.Button.btn1.primary, .Button.btn1.primaryOnHover:hover, .Button.btn1.primaryOnHover:focus, .Button.btn1.primaryOnHover.active {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e3262e), to(#ab171e));
+    background-image: -webkit-linear-gradient(#e3262e, #ab171e);
+    background-image: linear-gradient(#e3262e, #ab171e);
+    background-color: #ab171e;
+    border-bottom-color: #820a0f;
+    border-left-color: #9a1015;
+    border-right-color: #9a1015;
+    border-top-color: #af151b;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.34);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.34);
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
+}
+
+.Button.btn1.primary:not(.noHoverActive):hover, .Button.btn1.primary:not(.noHoverActive):focus, .Button.btn1.primaryOnHover:hover:not(.noHoverActive):hover, .Button.btn1.primaryOnHover:hover:not(.noHoverActive):focus, .Button.btn1.primaryOnHover:focus:not(.noHoverActive):hover, .Button.btn1.primaryOnHover:focus:not(.noHoverActive):focus, .Button.btn1.primaryOnHover.active:not(.noHoverActive):hover, .Button.btn1.primaryOnHover.active:not(.noHoverActive):focus {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e63d45), to(#c11a22));
+    background-image: -webkit-linear-gradient(#e63d45, #c11a22);
+    background-image: linear-gradient(#e63d45, #c11a22);
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+    border: 1px solid #920c12;
+}
+
+.Button.btn1.primary:not(.noHoverActive):active, .Button.btn1.primary:not(.noHoverActive).active, .Button.btn1.primaryOnHover:hover:not(.noHoverActive):active, .Button.btn1.primaryOnHover:hover:not(.noHoverActive).active, .Button.btn1.primaryOnHover:focus:not(.noHoverActive):active, .Button.btn1.primaryOnHover:focus:not(.noHoverActive).active, .Button.btn1.primaryOnHover.active:not(.noHoverActive):active, .Button.btn1.primaryOnHover.active:not(.noHoverActive).active {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#bb1618), to(#e22123));
+    background-image: -webkit-linear-gradient(#bb1618, #e22123);
+    background-image: linear-gradient(#bb1618, #e22123);
+    -webkit-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.5) inset;
+    background-color: #e22123;
+    border-color: #99161b;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.6);
+}
+
+.Button.btn1.dim {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #777;
+}
+
+.Button.btn1.unAuthFacebookConnect, .Button.btn1.unAuthGplusConnect,
+.Button.btn1.unAuthTwitterConnect, .Button.btn1.unAuthRakutenConnect {
+    height: 42px;
+    position: relative;
+}
+
+.Button.btn1.unAuthFacebookConnect em, .Button.btn1.unAuthGplusConnect em,
+.Button.btn1.unAuthTwitterConnect em, .Button.btn1.unAuthRakutenConnect em {
+    bottom: 0;
+    -webkit-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.05);
+    height: 39px;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 41px;
+}
+
+.Button.btn1.unAuthFacebookConnect span, .Button.btn1.unAuthGplusConnect span,
+.Button.btn1.unAuthTwitterConnect span, .Button.btn1.unAuthRakutenConnect span {
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+}
+
+.Button.btn1.unAuthFacebookConnect {
+    background-color: #43609b;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5678bc), to(#314a7b));
+    background: -webkit-linear-gradient(#5678bc, #314a7b);
+    background: linear-gradient(#5678bc, #314a7b);
+    border: 1px solid #293f69;
+    border-top-color: #314a7b;
+    color: #444;
+    text-shadow: 0 1px #fff;
+}
+
+.Button.btn1.unAuthFacebookConnect:hover, .Button.btn1.unAuthFacebookConnect:focus, .Button.btn1.unAuthFacebookConnect:active, .Button.btn1.unAuthFacebookConnect.active {
+    border: 1px solid #1b2945;
+    border-top-color: #293f69;
+}
+
+.Button.btn1.unAuthFacebookConnect:active, .Button.btn1.unAuthFacebookConnect.active {
+    background-color: #3b5996;
+    background: -webkit-gradient(linear, left top, left bottom, from(#466ab2), to(#314a7b));
+    background: -webkit-linear-gradient(#466ab2, #314a7b);
+    background: linear-gradient(#466ab2, #314a7b);
+    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.Button.btn1.unAuthFacebookConnect em {
+    width: 42px;
+    height: 42px;
+    background: url('/webapp/style/sprites/webapp-common-main-1x.24717340.png') -118px -97px no-repeat;
+    background-color: #5a78b9;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect, .Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect:hover, .Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect:active {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2953ad), to(#234ca2));
+    background: -webkit-linear-gradient(#2953ad, #234ca2);
+    background: linear-gradient(#2953ad, #234ca2);
+    background-clip: padding-box;
+    border: 3px solid rgba(9, 39, 101, 0.5);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+    height: auto;
+    padding-bottom: 12px;
+    padding-top: 10px;
+}
+
+.Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect em,
+.Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect:hover em, .Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect:active em {
+    width: 50px;
+    height: 42px;
+    background: url('/webapp/style/sprites/webapp-common-desktop-1x.7d0a7103.png') -99px -303px no-repeat;
+    background-color: rgba(255, 255, 255, 0.04);
+    margin-top: -2px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect em,
+    .Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect:hover em, .Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect:active em {
+        background-image: url('/webapp/style/sprites/webapp-common-desktop-2x.69144435.png');
+        background-position: -51px -299px;
+        background-size: 444px 417px;
+    }
+}
+
+.UnauthBanner .Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect em,
+.UnauthBanner .Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect:hover em, .UnauthBanner .Button.btn1.unauthHomeRegisterButton.unAuthFacebookConnect:active em {
+    background-color: transparent;
+}
+
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthFacebookConnect,
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthFacebookConnect:active, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthFacebookConnect:hover {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border: 1px solid rgba(5, 37, 105, 0.64);
+    border-radius: 3px;
+    height: 39px;
+    width: 100%;
+}
+
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthFacebookConnect em,
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthFacebookConnect:active em, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthFacebookConnect:hover em {
+    height: 35px;
+    margin-left: -6px;
+    width: 40px;
+}
+
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthFacebookConnect:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#3660BA), to(#3059AF));
+    background: -webkit-linear-gradient(#3660BA, #3059AF);
+    background: linear-gradient(#3660BA, #3059AF);
+}
+
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthFacebookConnect.intButton,
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthFacebookConnect.intButton:active, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthFacebookConnect.intButton:hover {
+    float: left;
+    margin-right: 16px;
+    width: 126px;
+}
+
+.Button.btn1.unauthHomeRegisterButton.unAuthemailSignup, .Button.btn1.unauthHomeRegisterButton.unAuthemailSignup:hover {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-clip: padding-box;
+    border: 3px solid rgba(51, 51, 51, 0.4);
+    border-radius: 6px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    color: #666;
+}
+
+.Button.btn1.unauthHomeRegisterButton.unAuthemailSignup em, .Button.btn1.unauthHomeRegisterButton.unAuthemailSignup:hover em {
+    width: 50px;
+    height: 42px;
+    background: url('/webapp/style/sprites/webapp-common-desktop-1x.7d0a7103.png') -47px -303px no-repeat;
+    height: 40px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .Button.btn1.unauthHomeRegisterButton.unAuthemailSignup em, .Button.btn1.unauthHomeRegisterButton.unAuthemailSignup:hover em {
+        background-image: url('/webapp/style/sprites/webapp-common-desktop-2x.69144435.png');
+        background-position: 0px -299px;
+        background-size: 444px 417px;
+    }
+}
+
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthemailSignup,
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthemailSignup:active, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthemailSignup:hover {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 3px;
+    height: 39px;
+    width: 268px;
+}
+
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthemailSignup em,
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthemailSignup:active em, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthemailSignup:hover em {
+    height: 37px;
+    margin-left: -6px;
+    width: 40px;
+}
+
+.Button.btn1.unAuthGplusConnect {
+    background-color: #ef6666;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f87474), to(#e65858));
+    background: -webkit-linear-gradient(#f87474, #e65858);
+    background: linear-gradient(#f87474, #e65858);
+    border: 1px solid #e34242;
+    border-top-color: #e65858;
+    color: #444;
+    text-shadow: 0 1px #fff;
+}
+
+.Button.btn1.unAuthGplusConnect:hover, .Button.btn1.unAuthGplusConnect:focus, .Button.btn1.unAuthGplusConnect:active, .Button.btn1.unAuthGplusConnect.active {
+    border: 1px solid #d21f1f;
+    border-top-color: #e34242;
+}
+
+.Button.btn1.unAuthGplusConnect:active, .Button.btn1.unAuthGplusConnect.active {
+    background-color: #ee5959;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f75c5c), to(#e65858));
+    background: -webkit-linear-gradient(#f75c5c, #e65858);
+    background: linear-gradient(#f75c5c, #e65858);
+    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.Button.btn1.unAuthGplusConnect em {
+    width: 41px;
+    height: 41px;
+    background: url('/webapp/style/sprites/webapp-common-main-1x.24717340.png') -215px -43px no-repeat;
+    background-color: #e65858;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .Button.btn1.unAuthGplusConnect em {
+        background-image: url('/webapp/style/sprites/webapp-common-main-2x.be30421d.png');
+        background-position: -128px -43px;
+        background-size: 229px 211px;
+    }
+}
+
+.Button.btn1.unAuthTwitterConnect {
+    background-color: #3fa7d0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5fbee4), to(#2091bd));
+    background: -webkit-linear-gradient(#5fbee4, #2091bd);
+    background: linear-gradient(#5fbee4, #2091bd);
+    border: 1px solid #1c80a8;
+    border-top-color: #2091bd;
+    color: #444;
+    text-shadow: 0 1px #fff;
+}
+
+.Button.btn1.unAuthTwitterConnect:hover, .Button.btn1.unAuthTwitterConnect:focus, .Button.btn1.unAuthTwitterConnect:active, .Button.btn1.unAuthTwitterConnect.active {
+    border: 1px solid #155f7c;
+    border-top-color: #1c80a8;
+}
+
+.Button.btn1.unAuthTwitterConnect:active, .Button.btn1.unAuthTwitterConnect.active {
+    background-color: #34a3cf;
+    background: -webkit-gradient(linear, left top, left bottom, from(#49b6e1), to(#2091bd));
+    background: -webkit-linear-gradient(#49b6e1, #2091bd);
+    background: linear-gradient(#49b6e1, #2091bd);
+    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.Button.btn1.unAuthTwitterConnect em {
+    width: 41px;
+    height: 41px;
+    background: url('/webapp/style/sprites/webapp-common-main-1x.24717340.png') -215px 0px no-repeat;
+    background-color: #49b6e1;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.Button.btn1.unAuthRakutenConnect {
+    background-color: #c11300;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f41800), to(#8e0e00));
+    background: -webkit-linear-gradient(#f41800, #8e0e00);
+    background: linear-gradient(#f41800, #8e0e00);
+    border: 1px solid #750a00;
+    border-top-color: #8e0e00;
+    color: #444;
+    text-shadow: 0 1px #fff;
+}
+
+.Button.btn1.unAuthRakutenConnect:hover, .Button.btn1.unAuthRakutenConnect:focus, .Button.btn1.unAuthRakutenConnect:active, .Button.btn1.unAuthRakutenConnect.active {
+    border: 1px solid #420500;
+    border-top-color: #750a00;
+}
+
+.Button.btn1.unAuthRakutenConnect:active, .Button.btn1.unAuthRakutenConnect.active {
+    background-color: #b41200;
+    background: -webkit-gradient(linear, left top, left bottom, from(#db1600), to(#8e0e00));
+    background: -webkit-linear-gradient(#db1600, #8e0e00);
+    background: linear-gradient(#db1600, #8e0e00);
+    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.Button.btn1.unAuthRakutenConnect em {
+    width: 41px;
+    height: 41px;
+    background: url('/webapp/style/sprites/webapp-common-main-1x.24717340.png') -162px -97px no-repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .Button.btn1.unAuthRakutenConnect em {
+        background-image: url('/webapp/style/sprites/webapp-common-main-2x.be30421d.png');
+        background-position: 0px -96px;
+        background-size: 229px 211px;
+    }
+}
+
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton,
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:hover {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: white;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e6e6e6));
+    background: -webkit-linear-gradient(#ffffff, #e6e6e6);
+    background: linear-gradient(#ffffff, #e6e6e6);
+    border: 1px solid #d9d9d9;
+    border-top-color: #e6e6e6;
+    color: #444;
+    text-shadow: 0 1px #fff;
+    height: 39px;
+    width: 126px;
+}
+
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:hover, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:focus, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:active, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton.active,
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:hover:hover, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:hover:focus, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:hover:active, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:hover.active {
+    border: 1px solid #bfbfbf;
+    border-top-color: #d9d9d9;
+}
+
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:active, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton.active,
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:hover:active, .Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:hover.active {
+    background-color: #ebebeb;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e6e6e6));
+    background: -webkit-linear-gradient(#f2f2f2, #e6e6e6);
+    background: linear-gradient(#f2f2f2, #e6e6e6);
+    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton span,
+.Button.btn1.unauthHomeRegisterButton.multiStepRedesign.unAuthRakutenConnect.intButton:hover span {
+    text-shadow: none;
+    color: #c11400;
+}
+
+.Button.btn1.registerLoginButton em {
+    left: 0;
+    position: absolute;
+    padding: 0;
+    top: 0;
+}
+
+.Button.btn1.registerLoginButton span {
+    display: inline-block;
+    margin-left: 42px;
+    margin-top: -3px;
+}
+
+.Button.btn1.registerLoginButton.multiStepRedesign span {
+    margin-left: 30px;
+}
+
+.Button.btn1.registerLoginButton.multiStepRedesign.intButton span {
+    bottom: 6px;
+}
+
+.Button.btn1.registerLoginButton.multiStepRedesign.unAuthRakutenConnect.intButton em {
+    left: -1px;
+    top: -3px;
+}
+
+.Button.btn1:active, .Button.btn1.active {
+    background-color: #f7f7f7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#fff));
+    background: -webkit-linear-gradient(#f0f0f0, #fff);
+    background: linear-gradient(#f0f0f0, #fff);
+    border-color: #b8b8b8 #c2c2c2 #ccc;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.33) inset;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.33) inset;
+}
+
+.formFooter #formFooter {
+	display:none;
+}
+
